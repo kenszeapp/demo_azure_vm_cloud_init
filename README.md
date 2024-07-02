@@ -8,6 +8,8 @@
 git clone https://github.com/kenszeapp/demo_azure_vm_cloud_init.git
 
 cd demo_azure_vm_cloud_init
+
+chmod +wx ./create.sh
 ```
 
 ## Optional, modify the varibles like VM_RG, VM_NAME etc.
@@ -16,6 +18,6 @@ cd demo_azure_vm_cloud_init
 
 ## Deploy
 ```
-chmod +x ./create.sh
+
 ./create.sh
 ```

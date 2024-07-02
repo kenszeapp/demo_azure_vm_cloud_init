@@ -18,6 +18,6 @@ az vm create \
     --size Standard_B1ms \
 	&& echo "Add open-port" \
 	&& az vm open-port --port 443,943,1194,26080 --resource-group $VM_RG --name $VM_NAME
-	
+	&& echo "setup done. Get ssh key ~/.ssh/id_rsa and id_rsa.pub"
 	
  
