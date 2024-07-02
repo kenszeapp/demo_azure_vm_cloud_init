@@ -10,21 +10,12 @@ system_info:
     groups: [docker]
 
 packages:
-  - apt-transport-https
   - ca-certificates
   - curl
   - docker.io
   - docker-compose
 
-runcmd:
-  - mkdir -p /etc/apt/keyrings
-  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-  - echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
-  - apt-get update
-  - apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
-  - systemctl enable docker
-  - systemctl start docker
-  
+runcmd: 
 # lanuch app
   - curl -o /tmp/docker-compose.yml https://raw.githubusercontent.com/kenszeapp/demo_azure_vm_cloud_init/main/docker-compose.yml
   - cd /tmp
