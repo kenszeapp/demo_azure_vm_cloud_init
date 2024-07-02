@@ -1,0 +1,33 @@
+version: '3'
+services:
+  chrome-novnc:
+    image: vital987/chrome-novnc:latest
+    container_name: chrome-novnc
+    environment:
+      - PORT=8080
+      - VNC_PASS=Password!!
+      - VNC_RESOLUTION=1600x1200
+    ports:
+      - "26080:8080"
+    restart: always
+
+  openvpn-as:
+    image: openvpn/openvpn-as
+    container_name: openvpn-as
+    cap_add: 
+      - NET_ADMIN
+    ports:
+      - "943:943"
+      - "443:443"
+      - "1194:1194/udp"
+    volumes:
+      - openvpn-as:/openvpn
+    restart: always
+
+volumes:
+  openvpn-as:
+
+
+# 
+# docker-compose logs -f openvpn-as 
+

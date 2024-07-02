@@ -1,0 +1,15 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - docker.io
+runcmd:
+  - systemctl enable docker
+  - systemctl start docker
+# add docker group   
+  - groupadd docker
+  - usermod -aG docker $USER
+  - newgrp docker
+# lanuch app and print the openvpn webadmin password.
+  - docker compose up -d && docker-compose logs -f openvpn-as
+
+ 
