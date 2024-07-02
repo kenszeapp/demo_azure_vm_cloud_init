@@ -28,6 +28,6 @@ volumes:
   openvpn-as:
 
 
-# 
+# check vpn password 
 # docker-compose logs -f openvpn-as 
 

@@ -16,5 +16,6 @@ cd demo_azure_vm_cloud_init
 
 ## Deploy
 ```
+chmod +x ./create.sh
 ./create.sh
 ```
