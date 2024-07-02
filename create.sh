@@ -1,5 +1,6 @@
+# replace your parameter.
 VM_RG=aus-dev-rg
-VM_NAME=dev-vm-20240702-test-2
+VM_NAME=dev-vm-20240702-test
 VM_ADMIN_NAME=ubadmin
 VM_SIZE=Standard_B1ms
 

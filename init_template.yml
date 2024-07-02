@@ -19,6 +19,4 @@ runcmd:
 # lanuch app
   - curl -o /tmp/docker-compose.yml https://raw.githubusercontent.com/kenszeapp/demo_azure_vm_cloud_init/main/docker-compose.yaml
   - cd /tmp
-  - docker-compose -f /tmp/docker-compose.yml up -d && docker compose logs openvpn-as | grep "Auto-generated"
-
-  
+  - docker-compose -f /tmp/docker-compose.yml up -d && docker-compose logs openvpn-as | grep "Auto-generated"
